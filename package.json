@@ -1,0 +1,25 @@
+{
+  "name": "fn",
+  "version": "0.0.0",
+  "description": "Create a pack of useful function for better functional programming.",
+  "main": "fn.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/alexeyraspopov/fn.git"
+  },
+  "author": "",
+  "license": "BSD",
+  "bugs": {
+    "url": "https://github.com/alexeyraspopov/fn/issues"
+  },
+  "devDependencies": {
+    "grunt-contrib-jshint": "~0.7.2",
+    "grunt-contrib-uglify": "~0.2.7",
+    "grunt": "~0.4.2",
+    "grunt-bump": "0.0.11",
+    "grunt-complexity": "~0.1.3"
+  }
+}
