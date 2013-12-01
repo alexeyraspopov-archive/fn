@@ -12,9 +12,7 @@ function compose(fnA, fnB){
 	};
 }
 
-function pipe(){
-	var fns = Array.prototype.slice.call(arguments);
-
+function pipe(fns){
 	return function(data){
 		return fns.reduce(function(data, fn){
 			return fn(data);
