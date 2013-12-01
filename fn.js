@@ -16,10 +16,8 @@ function pipe(){
 	var fns = Array.prototype.slice.call(arguments);
 
 	return function(data){
-		while(fns.length){
-			data = fns.shift()(data);
-		}
-
-		return data;
+		return fns.reduce(function(data, fn){
+			return fn(data);
+		}, data);
 	};
 }
