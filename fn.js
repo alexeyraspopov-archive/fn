@@ -25,11 +25,10 @@ function pipe(fns){
 
 // TODO: think about task
 function once(fn){
-	var value, called;
+	var value;
 
 	return function(){
-		if(!called){
-			called = true;
+		if(fn){
 			value = fn.apply(this, arguments);
 			fn = null;
 		}
