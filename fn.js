@@ -8,7 +8,7 @@ function memoize(fn, memo){
 
 function compose(fnA, fnB){
 	return function(){
-		return fnA(fnB.apply(null, arguments));
+		return fnA(fnB.apply(this, arguments));
 	};
 }
 
@@ -20,5 +20,19 @@ function pipe(fns){
 		return fns.reduce(function(data, fn){
 			return fn(data);
 		}, data);
+	};
+}
+
+function once(fn){
+	var value, called;
+
+	return function(){
+		if(!called){
+			called = true;
+			value = fn.apply(this, arguments);
+			fn = null;
+		}
+
+		return value;
 	};
 }
