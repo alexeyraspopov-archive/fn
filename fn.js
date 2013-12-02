@@ -23,6 +23,7 @@ function pipe(fns){
 	};
 }
 
+// TODO: think about task
 function once(fn){
 	var value, called;
 
