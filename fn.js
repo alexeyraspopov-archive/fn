@@ -12,10 +12,6 @@ function compose(fnA, fnB){
 	};
 }
 
-// TODO: think about how real pipes work
-// cat file | grep City | sed -e ...
-// They have params
-// TODO: create monad generator (and bind function)
 function pipe(fns){
 	return function(data){
 		return fns.reduce(function(data, fn){
@@ -24,7 +20,6 @@ function pipe(fns){
 	};
 }
 
-// TODO: think about task
 function once(fn){
 	var value;
 
