@@ -15,3 +15,19 @@ To avoid repeating the calculation of results for previously processed inputs, u
     var factorial = fn.memoize(function(n){
         return n === 0 ? 1 : n * factorial(n - 1);
     });
+
+## Compose
+
+TBD
+
+## Pipe
+
+TBD
+
+## Once
+
+TBD
+
+## Empty
+
+`fn.empty` is just empty function
