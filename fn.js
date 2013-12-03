@@ -1,26 +1,28 @@
-function memoize(fn, memo){
+fn = {};
+
+fn.memoize = function(fn, memo){
 	memo = memo || {};
 
 	return function(arg){
 		return memo[arg] || (memo[arg] = fn(arg));
 	};
-}
+};
 
-function compose(fnA, fnB){
+fn.compose = function(fnA, fnB){
 	return function(){
 		return fnA(fnB.apply(this, arguments));
 	};
-}
+};
 
-function pipe(fns){
+fn.pipe = function(fns){
 	return function(data){
 		return fns.reduce(function(data, fn){
 			return fn(data);
 		}, data);
 	};
-}
+};
 
-function once(fn){
+fn.once = function(fn){
 	var value;
 
 	return function(){
@@ -31,6 +33,6 @@ function once(fn){
 
 		return value;
 	};
-}
+};
 
-function empty(){}
+fn.empty = function(){};
