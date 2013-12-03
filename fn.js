@@ -37,3 +37,5 @@ function once(fn){
 		return value;
 	};
 }
+
+function empty(){}
