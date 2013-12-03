@@ -1,9 +1,17 @@
-# Idea
+# Functions
 
-Create a pack of useful function for better functional programming.
+Pack of useful functions for better functional programming.
 
-Some functions:
+## Memoize
 
- - memoize
- - compose
- - pipe (or chain)
+For example you have to calculate factorial
+
+    var factorial = function(n){
+        return n === 0 ? 1 : n * factorial(n - 1);
+    }
+
+To avoid repeating the calculation of results for previously processed inputs, use `fn.memoize`
+
+    var factorial = fn.memoize(function(n){
+        return n === 0 ? 1 : n * factorial(n - 1);
+    });
