@@ -26,8 +26,8 @@ TBD
 
 ## Once
 
-TBD
+Call a function once and save result
 
 ## Empty
 
-`fn.empty` is just empty function
+`fn.empty` is just empty function that you can use as stub
