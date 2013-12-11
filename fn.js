@@ -35,4 +35,10 @@ fn.once = function(fn){
 	};
 };
 
+fn.invoke = fn.memo(function(method){
+	return function(target, args){
+		return target[method].apply(target, args);
+	};
+});
+
 fn.empty = function(){};
