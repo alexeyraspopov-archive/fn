@@ -18,7 +18,7 @@ To avoid repeating the calculation of results for previously processed inputs, u
 
 ## Compose
 
-TBD
+Create function that use result of the first function for call second function
 
 ## Pipe
 
