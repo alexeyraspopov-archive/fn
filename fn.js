@@ -7,7 +7,7 @@ fn.memoize = function(fn, hash){
 
 	return function(){
 		var key = hash.apply(this, arguments);
-		return memo[key] || (memo[key] = fn.apply(this, arguments));
+		return memo.hasOwnProperty(key) ? memo[key] : (memo[key] = fn.apply(this, arguments));
 	};
 };
 
