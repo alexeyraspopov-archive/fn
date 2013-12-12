@@ -32,7 +32,7 @@ Call a function once and save result
 
 TBD
 
-    ['first', 'second'].map(invoke('toUpperCase'));
+    ['first', 'second'].map(fn.invoke('toUpperCase'));
 
 ## Empty
 
