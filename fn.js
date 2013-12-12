@@ -35,7 +35,7 @@ fn.once = function(fn){
 	};
 };
 
-fn.invoke = fn.memo(function(method){
+fn.invoke = fn.memoize(function(method){
 	return function(target, args){
 		return target[method].apply(target, args);
 	};
