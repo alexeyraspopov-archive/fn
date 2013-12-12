@@ -48,4 +48,10 @@ fn.invoke = fn.memoize(function(method){
 	};
 });
 
+fn.pluck = fn.memoize(function(property){
+	return function(target){
+		return target[property];
+	};
+});
+
 fn.empty = function(){};
