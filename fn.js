@@ -1,11 +1,18 @@
 fn = {};
 
-fn.memoize = function(fn, memo){
-	memo = memo || {};
+fn.memoize = function(fn, hash){
+	var memo = {};
 
-	return function(arg){
-		return memo[arg] || (memo[arg] = fn(arg));
+	hash = hash || fn.identity;
+
+	return function(){
+		var key = hash.apply(this, arguments);
+		return memo[key] || (memo[key] = fn.apply(this, arguments));
 	};
+};
+
+fn.identity = function(value){
+	return value;
 };
 
 fn.compose = function(fnA, fnB){
