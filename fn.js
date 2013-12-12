@@ -3,7 +3,7 @@ fn = {};
 fn.memoize = function(fn, hash){
 	var memo = {};
 
-	hash = hash || fn.identity;
+	hash = hash || this.identity;
 
 	return function(){
 		var key = hash.apply(this, arguments);
