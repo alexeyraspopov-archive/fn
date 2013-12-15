@@ -34,6 +34,12 @@ TBD
 
     ['first', 'second'].map(fn.invoke('toUpperCase'));
 
+## Pluck
+
+TBD
+
+    [elementA, elementB].map(fn.pluck('textContent'));
+
 ## Empty
 
 `fn.empty` is just empty function that you can use as stub
