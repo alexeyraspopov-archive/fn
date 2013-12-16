@@ -16,6 +16,21 @@ To avoid repeating the calculation of results for previously processed inputs, u
         return n === 0 ? 1 : n * factorial(n - 1);
     });
 
+Also you can set hasher function
+
+	var wrap = function(name, age){
+		return { name: name, age: age };
+	};
+
+Memoize version
+
+	var wrap = fn.memoize(function(name, age){
+		return { name: name, age: age };
+	}, function(name, age){
+		// hash will be a result of concat
+		return name + age;
+	});
+
 ## Compose
 
 Create function that use result of the first function for call second function
