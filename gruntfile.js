@@ -23,9 +23,16 @@ module.exports = function(grunt){
 			options: {
 				report: 'min'
 			},
-			codebase: {
+			web: {
+				options: {
+					wrap: 'fn'
+				},
 				src: 'fn.js',
 				dest: 'fn.min.js'
+			},
+			node: {
+				src: 'fn.js',
+				dest: 'index.js'
 			}
 		}
 	});
