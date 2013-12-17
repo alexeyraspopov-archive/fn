@@ -1,6 +1,4 @@
-fn = {};
-
-fn.memoize = function(fn, hash){
+exports.memoize = function(fn, hash){
 	var memo = {};
 
 	hash = hash || this.identity;
@@ -11,17 +9,17 @@ fn.memoize = function(fn, hash){
 	};
 };
 
-fn.identity = function(value){
+exports.identity = function(value){
 	return value;
 };
 
-fn.compose = function(fnA, fnB){
+exports.compose = function(fnA, fnB){
 	return function(){
 		return fnA(fnB.apply(this, arguments));
 	};
 };
 
-fn.pipe = function(fns){
+exports.pipe = function(fns){
 	return function(data){
 		return fns.reduce(function(data, fn){
 			return fn(data);
@@ -29,7 +27,7 @@ fn.pipe = function(fns){
 	};
 };
 
-fn.once = function(fn){
+exports.once = function(fn){
 	var value;
 
 	return function(){
@@ -42,16 +40,16 @@ fn.once = function(fn){
 	};
 };
 
-fn.invoke = fn.memoize(function(method){
+exports.invoke = exports.memoize(function(method){
 	return function(target, args){
 		return target[method].apply(target, args);
 	};
 });
 
-fn.pluck = fn.memoize(function(property){
+exports.pluck = exports.memoize(function(property){
 	return function(target){
 		return target[property];
 	};
 });
 
-fn.empty = function(){};
+exports.empty = function(){};
