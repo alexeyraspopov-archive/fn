@@ -37,7 +37,13 @@ Create function that use result of the first function for call second function
 
 ## Pipe
 
-TBD
+    var pipe = fn.pipe([
+    	    function(n){ return n + 1; },
+    	    function(n){ return n * n; },
+    	    function(n){ return 'Hello, ' + n; }
+    	]);
+
+    pipe(2); // 2 -> 2 + 1 -> 3 * 3 -> 'Hello, ' + 9
 
 ## Once
 
