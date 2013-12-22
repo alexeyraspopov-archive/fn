@@ -64,3 +64,7 @@ TBD
 ## Empty
 
 `fn.empty` is just empty function that you can use as stub
+
+## License
+
+[MIT License](http://en.wikipedia.org/wiki/MIT_License) (c) Alexey Raspopov
