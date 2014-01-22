@@ -52,4 +52,10 @@ exports.pluck = exports.memoize(function(property){
 	};
 });
 
+exports.toggle = exports.memoize(function(property){
+	return function(target){
+		target[property] = !target[property];
+	};
+});
+
 exports.empty = function(){};
